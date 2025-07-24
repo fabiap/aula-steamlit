@@ -27,12 +27,9 @@ st.markdown("--")
 st.subheader("grafico de linhas")
 
 df = pd.DataFrame(
-    np.random.randn(20, 3), columns=["nome", "escala", "tipo", "regiao", "quantidade_residuo_kg", "dias_compostagem", "temperatura_media_local"]
+    np.random.randn(20, 3), columns=["nome", "escala", "tipo", "regiao", "quantidade_residuo_kg"]
 )
 
 st.line_chart(
-    chart_data,
-    x="col1",
-    y=["col2", "col3"],
-    color=["#FF0000", "#0000FF"],  # Optional
+    df[["escala", "tipo", "quantidade_residuo_kg"]]
 )
